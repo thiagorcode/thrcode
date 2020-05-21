@@ -1,0 +1,48 @@
+@charset "utf-8";
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+.center{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2%;
+}
+header{
+  background-color: #AE61D1;
+}
+header p{
+  font-size: 34px;
+  padding: 20px 0;
+  color: #220330;
+  font-family: 'Play', sans-serif;
+}
+header p span{
+  color: rgb(173, 7, 250);
+}
+main{
+  background-color: #300B41;
+  position: relative;
+  height: 88vh;
+}
+main ul{
+  text-align: center;
+  position: absolute;
+  top: 20%;
+  left: 45%;
+}
+main ul li{
+  padding: 15px;
+  border-radius: 25px;
+  border: 7px solid #AE61D1;
+  margin: 10px 0;
+}
+main ul li a {
+  font-size: 28px;
+}
+main ul li i {
+  padding-right: 20px;
+}
