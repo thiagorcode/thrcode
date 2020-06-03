@@ -14,13 +14,19 @@
 header{
   background-color: rgba(0,212,255,1);
 }
-header p{
+header h1{
+  font-weight: 300;
   font-size: 34px;
   padding: 20px 0;
   color: #220330;
   font-family: 'Play', sans-serif;
 }
-header p span{
+header h1::before{
+  content: "<";
+  color: rgb(173, 7, 250);
+}
+header h1::after{
+  content: "/>";
   color: rgb(173, 7, 250);
 }
 body{
