@@ -3,7 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <meta name="description" content="Thiago Rodrigues — Desenvolvedor Full Stack. TypeScript, Node.js, React e AWS Serverless.">
+  <meta name="author" content="Thiago Rodrigues">
+  <meta property="og:title" content="Thiago Rodrigues — Desenvolvedor Full Stack">
+  <meta property="og:description" content="Portfolio e redes: TypeScript, Node.js, React, AWS Serverless e mais.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/54317829?v=4">
+  <meta property="og:url" content="https://thiagorcode.netlify.app/">
+  <title>Thiago Rodrigues — Desenvolvedor Full Stack</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1117'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='34' font-weight='bold' text-anchor='middle' fill='%2300d4ff'%3E%26lt;/%26gt;%3C/text%3E%3C/svg%3E">
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167564622-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -11,44 +20,436 @@
     gtag('js', new Date());
     gtag('config', 'UA-167564622-1');
   </script>
-
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <title>Thiago Rodrigues</title>
 </head>
 <body>
-  <header>
-    <div class="center">
-      <section class="logo">
-        <h1>Thiago Rodrigues</h1>
-      </section>
-    </div>
-    <!--center-->
+
+  <!-- Barra de progresso de scroll -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Fundo decorativo -->
+  <div class="bg-fx" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="grid-overlay"></span>
+  </div>
+
+  <header class="navbar" id="navbar">
+    <nav class="nav-inner container">
+      <a href="#inicio" class="logo" aria-label="Voltar ao início">
+        <span class="logo-bracket"><</span>Thiago<span class="logo-bracket">/></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio" class="nav-link active">Início</a></li>
+        <li><a href="#sobre" class="nav-link">Sobre</a></li>
+        <li><a href="#experiencia" class="nav-link">Experiência</a></li>
+        <li><a href="#stack" class="nav-link">Stack</a></li>
+        <li><a href="#projetos" class="nav-link">Projetos</a></li>
+        <li><a href="#contato" class="nav-link">Contato</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
   </header>
+
   <main>
-    <div class="center">
-      <div class="logo-perfil"></div>
-      <!--https://fonts.google.com/specimen/Noto+Sans?query=noto+sans
-        https://fonts.google.com/specimen/Arimo
-        https://fonts.google.com/specimen/Play?query=play&preview.text=Thiago+Rodrigues&preview.text_type=custom&sidebar.open&selection.family=Play:wght@400;700
-        -->
-      <div class="myConenction">
-        <ul>
-          <li><a href="https://www.instagram.com/dev.thiago/" target="_blank"><i
-                class="fab fa-instagram"></i>Instagram</a></li>
-          <li><a href="https://www.linkedin.com/in/thiagorodrig/" target="_blank"><i
-                class="fab fa-linkedin-in"></i>Linkedin</a></li>
-          <li><a href="https://github.com/thiagorcode?tab=repositories" target="_blank"><i class="fab fa-github"></i>Git
-              Hub</a></li>
-          <li><a href="mailto:ti.thiago.rodrigues@outlook.com" target="_blank"><i class="fab fa-google"></i>G-Mail</a>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="hero-hello reveal">// Olá, eu sou</p>
+          <h1 class="hero-name reveal">Thiago Rodrigues</h1>
+          <h2 class="hero-role reveal">
+            <span class="typed-label">Desenvolvedor&nbsp;</span><span class="typed" id="typed"></span><span class="cursor" aria-hidden="true">|</span>
+          </h2>
+          <p class="hero-desc reveal">
+            Full Stack na <strong>Smiles</strong>, apaixonado por construir coisas com
+            <strong>TypeScript</strong> e transformar ideias em produtos — do backend
+            serverless ao front-end.
+          </p>
+          <div class="hero-cta reveal">
+            <a href="#projetos" class="btn btn-primary">
+              <i class="fa-solid fa-code"></i> Ver projetos
+            </a>
+            <a href="#contato" class="btn btn-ghost">
+              <i class="fa-regular fa-paper-plane"></i> Contato
+            </a>
+          </div>
+          <div class="hero-socials reveal">
+            <a href="https://github.com/thiagorcode" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/thiagorodrig/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/dev.thiago/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:ti.thiago.rodrigues@outlook.com" aria-label="E-mail"><i class="fa-regular fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="hero-terminal reveal" aria-hidden="true">
+          <div class="terminal-bar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="terminal-title">thiago.ts</span>
+          </div>
+          <pre class="terminal-body"><code><span class="tk-kw">const</span> <span class="tk-var">dev</span> = {
+  nome: <span class="tk-str">"Thiago Rodrigues"</span>,
+  role: <span class="tk-str">"Full Stack Developer"</span>,
+  empresa: <span class="tk-str">"Smiles"</span>,
+  local: <span class="tk-str">"Guarulhos, SP"</span>,
+  stack: [<span class="tk-str">"TypeScript"</span>, <span class="tk-str">"Node.js"</span>, <span class="tk-str">"React"</span>],
+  cloud: [<span class="tk-str">"AWS"</span>, <span class="tk-str">"Serverless"</span>],
+  estudando: <span class="tk-str">"Go"</span>,
+  openToWork: <span class="tk-bool">true</span>,
+};</code></pre>
+        </div>
+      </div>
+
+      <a href="#sobre" class="scroll-hint" aria-label="Rolar para a seção Sobre">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- ============ SOBRE ============ -->
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">// sobre</span>
+          <h2 class="section-title">Quem é <span class="gradient-text">o dev</span>?</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              Sou desenvolvedor <strong>Full Stack</strong> e hoje faço parte do time da
+              <a href="https://www.smiles.com.br/" target="_blank" rel="noopener">Smiles</a>,
+              o maior programa de fidelidade do Brasil. No dia a dia, construo e evoluo
+              soluções que impactam milhões de usuários, sempre com foco em código limpo
+              e bem arquitetado.
+            </p>
+            <p>
+              Comecei a jornada em <strong>2019</strong> e desde então virou hábito:
+              transformo cada coisa nova que aprendo em um <a href="https://github.com/thiagorcode?tab=repositories" target="_blank" rel="noopener">repositório no GitHub</a> —
+              são mais de <strong>30 projetos públicos</strong> entre estudos, templates e
+              aplicações completas.
+            </p>
+            <p>
+              Fora do código, me encontram resolvendo desafios de lógica no
+              <strong>LeetCode</strong> e compartilhando um pouco da vida de dev no Instagram.
+            </p>
+          </div>
+
+          <div class="about-cards">
+            <div class="about-card reveal">
+              <i class="fa-solid fa-building"></i>
+              <div>
+                <span class="about-card-label">Empresa</span>
+                <strong>Smiles S.A.</strong>
+              </div>
+            </div>
+            <div class="about-card reveal">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <span class="about-card-label">Localização</span>
+                <strong>Guarulhos, SP</strong>
+              </div>
+            </div>
+            <div class="about-card reveal">
+              <i class="fa-solid fa-layer-group"></i>
+              <div>
+                <span class="about-card-label">Foco</span>
+                <strong>Full Stack</strong>
+              </div>
+            </div>
+            <div class="about-card reveal">
+              <i class="fa-solid fa-code-branch"></i>
+              <div>
+                <span class="about-card-label">Des de</span>
+                <strong>2019 no GitHub</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIÊNCIA ============ -->
+    <!-- EDITE SUAS EXPERIÊNCIAS AQUI: para adicionar um item, copie um bloco <li class="timeline-item"> ... </li> -->
+    <section class="section" id="experiencia">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">// experiencia</span>
+          <h2 class="section-title">Minha <span class="gradient-text">trajetória</span></h2>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline-item reveal">
+            <div class="timeline-marker">
+              <i class="fa-solid fa-plane"></i>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-date"><i class="fa-solid fa-calendar"></i> Atual</span>
+              <h3 class="timeline-role">Desenvolvedor Full Stack</h3>
+              <span class="timeline-company">Smiles S.A. · Guarulhos, SP</span>
+              <p>
+                Desenvolvimento full stack no maior programa de fidelidade do Brasil:
+                APIs em <strong>Node.js</strong> e <strong>TypeScript</strong>, arquitetura
+                serverless na <strong>AWS</strong> (Lambda, DynamoDB, S3) e features de ponta a
+                ponta para milhões de clientes.
+              </p>
+              <div class="tags">
+                <span class="tag">TypeScript</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">AWS</span>
+                <span class="tag">Serveless</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="timeline-marker">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-date"><i class="fa-solid fa-calendar"></i> 2019 — presente</span>
+              <h3 class="timeline-role">Evolução constante & estudos</h3>
+              <span class="timeline-company">Alura · Go Intensivo · LeetCode · comunidade</span>
+              <p>
+                Formação prática contínua: Imersão <strong>React</strong> da Alura, estudos de
+                <strong>Go</strong>, arquitetura limpa com <strong>NestJS</strong>, GraphQL e desafios
+                diários de lógica no LeetCode — tudo documentado em repositórios públicos.
+              </p>
+              <div class="tags">
+                <span class="tag">React</span>
+                <span class="tag">Go</span>
+                <span class="tag">NestJS</span>
+                <span class="tag">GraphQL</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="timeline-marker">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-date"><i class="fa-solid fa-calendar"></i> 2019</span>
+              <h3 class="timeline-role">Primeiro commit</h3>
+              <span class="timeline-company">github.com/thiagorcode</span>
+              <p>
+                Criação da conta no GitHub e o começo de tudo: HTML e CSS em projetos
+                pequenos como esta página — que hoje é meu cartão de visitas.
+              </p>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ STACK ============ -->
+    <!-- EDITE SUA STACK AQUI: copie um bloco <li class="tech-item"> ... </li> para adicionar tecnologia -->
+    <section class="section" id="stack">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">// stack</span>
+          <h2 class="section-title">Tecnologias <span class="gradient-text">que uso</span></h2>
+        </div>
+
+        <ul class="tech-grid">
+          <li class="tech-item reveal">
+            <i class="devicon devicon-typescript-original colored"></i>
+            <strong>TypeScript</strong>
+            <span>linguagem principal</span>
+          </li>
+          <li class="tech-item reveal">
+            <i class="devicon devicon-nodejs-plain colored"></i>
+            <strong>Node.js</strong>
+            <span>APIs & backend</span>
+          </li>
+          <li class="tech-item reveal">
+            <i class="devicon devicon-react-original colored"></i>
+            <strong>React</strong>
+            <span>front-end & SPA</span>
+          </li>
+          <li class="tech-item reveal">
+            <i class="devicon devicon-nestjs-plain-wordmark colored"></i>
+            <strong>NestJS</strong>
+            <span>arquitetura & microserviços</span>
+          </li>
+          <li class="tech-item reveal">
+            <i class="devicon devicon-graphql-plain colored"></i>
+            <strong>GraphQL</strong>
+            <span>apis flexíveis</span>
+          </li>
+          <li class="tech-item reveal">
+            <i class="devicon devicon-amazonwebservices-plain-wordmark colored"></i>
+            <strong>AWS</strong>
+            <span>serverless & lambda</span>
+          </li>
+          <li class="tech-item reveal">
+            <i class="devicon devicon-go-original-wordmark colored"></i>
+            <strong>Go</strong>
+            <span>aprendendo 🚀</span>
+          </li>
+          <li class="tech-item reveal">
+            <i class="devicon devicon-csharp-plain colored"></i>
+            <strong>C#</strong>
+            <span>primeiros passos</span>
           </li>
         </ul>
       </div>
-      <!--myConnection-->
-    </div>
-    <!--center-->
+    </section>
+
+    <!-- ============ PROJETOS ============ -->
+    <!-- EDITE SEUS PROJETOS AQUI: copie um bloco <article class="project-card"> ... </article> -->
+    <section class="section" id="projetos">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">// projetos</span>
+          <h2 class="section-title">Em <span class="gradient-text">construção</span></h2>
+          <p class="section-sub">Uma seleção do que anda saindo do meu GitHub.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <div class="project-top">
+              <i class="devicon devicon-typescript-original colored"></i>
+              <div class="project-links">
+                <a href="https://github.com/thiagorcode/inside-finances-fe" target="_blank" rel="noopener" aria-label="Repositório do front-end"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <h3 class="project-name">Inside Finances</h3>
+            <p class="project-desc">
+              Sistema completo de controle de gastos pessoais — front-end em React +
+              TypeScript e backend serverless em Node.js.
+            </p>
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Serverless</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <i class="devicon devicon-amazonwebservices-plain-wordmark colored"></i>
+              <div class="project-links">
+                <a href="https://github.com/thiagorcode/lambda-template-clean-architecture" target="_blank" rel="noopener" aria-label="Repositório"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <h3 class="project-name">Lambda Clean Architecture</h3>
+            <p class="project-desc">
+              Template de lambda com arquitetura limpa: AWS SAM + Node + TypeScript,
+              pronto para escalar sem virar espaguete.
+            </p>
+            <div class="tags">
+              <span class="tag">AWS SAM</span>
+              <span class="tag">Clean Arch</span>
+              <span class="tag">Node.js</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <i class="devicon devicon-react-original colored"></i>
+              <div class="project-links">
+                <a href="https://github.com/thiagorcode/Stringsflix" target="_blank" rel="noopener" aria-label="Repositório"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <h3 class="project-name">Stringsflix</h3>
+            <p class="project-desc">
+              Clone de streaming feito na Imersão React da Alura e refatorado para
+              TypeScript por conta própria — porque código bom nunca está bom o demais.
+            </p>
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <i class="devicon devicon-go-original-wordmark colored"></i>
+              <div class="project-links">
+                <a href="https://github.com/thiagorcode/leetcode-solutions" target="_blank" rel="noopener" aria-label="Repositório"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <h3 class="project-name">LeetCode Solutions</h3>
+            <p class="project-desc">
+              Resoluções comentadas de desafios de lógica e estruturas de dados —
+              o treino diário que mantém a mente afiada.
+            </p>
+            <div class="tags">
+              <span class="tag">Algoritmos</span>
+              <span class="tag">TypeScript</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="projects-cta reveal">
+          <a href="https://github.com/thiagorcode?tab=repositories" target="_blank" rel="noopener" class="btn btn-primary">
+            <i class="fa-brands fa-github"></i> Ver todos os repositórios
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTATO ============ -->
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">// contato</span>
+          <h2 class="section-title">Vamos <span class="gradient-text">conversar?</span></h2>
+          <p class="section-sub">Bora trocar ideia sobre código, projetos ou oportunidades.</p>
+        </div>
+
+        <div class="contact-grid">
+          <a class="contact-card reveal" href="https://www.linkedin.com/in/thiagorodrig/" target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin-in"></i>
+            <strong>LinkedIn</strong>
+            <span>in/thiagorodrig</span>
+          </a>
+          <a class="contact-card reveal" href="https://github.com/thiagorcode" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i>
+            <strong>GitHub</strong>
+            <span>@thiagorcode</span>
+          </a>
+          <a class="contact-card reveal" href="https://www.instagram.com/dev.thiago/" target="_blank" rel="noopener">
+            <i class="fa-brands fa-instagram"></i>
+            <strong>Instagram</strong>
+            <span>@dev.thiago</span>
+          </a>
+          <a class="contact-card reveal" href="mailto:ti.thiago.rodrigues@outlook.com">
+            <i class="fa-regular fa-envelope"></i>
+            <strong>E-mail</strong>
+            <span>ti.thiago.rodrigues@outlook.com</span>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="logo-bracket"><</span>Thiago<span class="logo-bracket">/></span>
+      <p>© <span id="year"></span> Thiago Rodrigues · Feito com <i class="fa-solid fa-mug-hot"></i> e muito <span class="gradient-text">CSS</span></p>
+    </div>
+  </footer>
+
   <script src="assets/js/script.js"></script>
 </body>
 </html>
