@@ -747,6 +747,12 @@ body.theme-light .tk-bool { color: #cf222e; }
 
 .project-top > i { font-size: 2.2rem; }
 
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .project-links a {
   color: var(--text-dim);
   font-size: 1.3rem;
